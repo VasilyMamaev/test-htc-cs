@@ -1,0 +1,49 @@
+@mixin red-button {
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background-color: $red;
+  color: $white;
+  padding: 9px 32px;
+  transition-duration: 400ms;
+  &:hover {
+    background-color: $dRed;
+  }
+}
+
+@mixin clear-button {
+  border: none;
+  background-color: transparent;
+  color: $red;
+  font-weight: bold;
+  padding: 9px 32px;
+  &:active, &:focus {
+    outline: none !important;
+  }
+  &::-moz-focus-inner {
+    border: 0 !important;
+  }
+}
+
+@mixin input-text {
+  border: none;
+  border-bottom: 1px solid $black;
+  padding-bottom: 6px;
+  &:hover {
+    border-bottom: 1px solid $dGray;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: transparent
+  }
+  &:active, &:focus {
+    outline: none !important;
+    border-bottom: 1px solid $dGray
+  }
+  &::-moz-focus-inner {
+    border: 0 !important;
+  }
+}
+
+@mixin input-checkbox {
+
+}
