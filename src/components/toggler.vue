@@ -1,23 +1,26 @@
 <template>
-<main>
-  <div class="toggler">
-    <nav>
-      <router-link to="/" exact-active-class="active" class="toggler__item">Фильмы</router-link>
-      <router-link to="Chanels" active-class="active" class="toggler__item">Телеканалы</router-link>
-    </nav>
-  </div>
-  <router-view/>
-</main>
+  <main>
+    <div class="toggler">
+      <nav>
+        <router-link to="/" exact-active-class="active" class="toggler__item"
+          >Фильмы</router-link
+        >
+        <router-link to="Chanels" active-class="active" class="toggler__item"
+          >Телеканалы</router-link
+        >
+      </nav>
+    </div>
+    <router-view />
+  </main>
 </template>
 
 <script>
-
 export default {
-  name: 'Toggler',
-}
+  name: "Toggler",
+};
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .toggler {
   margin: 0 auto;
   display: flex;
@@ -25,9 +28,8 @@ export default {
 }
 
 .toggler > nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10%;
+  display: flex;
+  justify-content: center;
 }
 
 .toggler__item {
@@ -44,6 +46,9 @@ export default {
   &.active {
     border-bottom: 2px solid $red;
     color: $red;
+  }
+  &:first-child {
+    margin-right: 24px;
   }
 }
 </style>

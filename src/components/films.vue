@@ -63,19 +63,19 @@
       <h2>Жанры</h2>
       <div class="genres__items">
         <div class="genres__item item-1">
-          <span>😁</span>
+          <img class="genre__img" src="../assets/smiles/comedy.png" />
           <span>Комедии</span>
         </div>
         <div class="genres__item item-2">
-          <span>😭</span>
+          <img class="genre__img" src="../assets/smiles/tragedy.png" />
           <span>Драмы</span>
         </div>
         <div class="genres__item item-3">
-          <span>👽</span>
+          <img class="genre__img" src="../assets/smiles/sci.png" />
           <span>Фантастика</span>
         </div>
         <div class="genres__item item-4">
-          <span>👻</span>
+          <img class="genre__img" src="../assets/smiles/horror.png" />
           <span>Ужасы</span>
         </div>
       </div>
@@ -98,18 +98,18 @@ section > div > h2 {
 // New
 
 .new__items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .new__item {
   display: flex;
   flex-direction: column;
+  width: 23%;
+  height: 40%;
 }
 
 .item__card {
-  width: 19vw;
   border-radius: 8px;
   position: relative;
 }
@@ -153,26 +153,35 @@ section > div > h2 {
 .item__text {
   font-size: 20px;
   line-height: 24px;
+  white-space: normal;
 }
 
 // Genres
 
 .genres__items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .genres__item {
-  width: 19vw;
+  width: 23%;
   height: 16vw;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
   opacity: 0.8;
   transition-duration: 200ms;
+
+  & span {
+    font-size: 20px;
+    line-height: 24px;
+    color: $white;
+    margin-top: 10%;
+  }
+
   &:hover {
     opacity: 1;
   }
@@ -183,22 +192,27 @@ section > div > h2 {
     background: linear-gradient(136.27deg, #f2994a 8.44%, #eb5757 91.36%);
   }
   &.item-3 {
-    background: linear-gradient(136.27deg, #56CCF2 8.44%, #2F80ED 91.36%);
+    background: linear-gradient(136.27deg, #56ccf2 8.44%, #2f80ed 91.36%);
   }
   &.item-4 {
     background: linear-gradient(136.27deg, #828282 8.44%, #333333 91.36%);
   }
 }
 
-.genres__item :nth-child(1) {
-  font-size: 3vw;
-  line-height: 2vw;
-  margin-top: 30%;
-}
-
-.genres__item :nth-child(2) {
-  font-size: 20px;
-  line-height: 24px;
-  margin-top: 10%;
+@media (max-width: 740px) {
+  .new__items {
+    flex-flow: row wrap;
+  }
+  .new__item {
+    min-width: 139px;
+  }
+  .genres__items {
+    flex-flow: row wrap;
+  }
+  .genres__item {
+    min-width: 139px;
+    min-height: 109px;
+    margin-bottom: 10px;
+  }
 }
 </style>
